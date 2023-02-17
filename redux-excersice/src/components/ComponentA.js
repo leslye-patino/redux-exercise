@@ -3,10 +3,28 @@ import ComponentB from "./ComponentB";
 import reducer from "../reducer";
 import { StateContext, DispatchContext, initialState } from "../constants";
 import "./styles.css";
+import { useReadPath } from "../hooks/useReadPath";
 
 export default function ComponentA() {
   //lets use useReducer to get a state and dispatch
-  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const { name } = useReadPath();
+
+  const initStateWithHref = () => {
+    console.log(
+      "initializing useReducer with name constant from useReadPath",
+      name
+    );
+    return {
+      name,
+    };
+  };
+
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialState,
+    initStateWithHref
+  );
   // onBlur event handler
 
   return (
