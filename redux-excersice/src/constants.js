@@ -7,7 +7,11 @@ import React from "react";
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();
 
+export const QueryParams = {
+  name: "name",
+};
+
 //Initial State of the Application
 export const initialState = {
-  name: ""
+  name: "",
 };

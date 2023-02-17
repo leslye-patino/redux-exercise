@@ -9,8 +9,8 @@ export default function ComponentB() {
     dispatch({
       type: "CHANGE_NAME",
       payload: {
-        name: event.target.value
-      }
+        name: event.target.value,
+      },
     });
   };
   return (
