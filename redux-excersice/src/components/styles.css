@@ -1,17 +1,5 @@
-.App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-.formContainer {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
 
-.formContainer input {
-  width: 50%;
-
+ p.error {
+  color: red !important;
+  font-size: 14px;
 }
