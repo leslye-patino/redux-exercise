@@ -3,3 +3,7 @@
   color: red !important;
   font-size: 14px;
 }
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
