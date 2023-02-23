@@ -18,10 +18,10 @@ export default function FormComponent() {
   const formSchema = object().shape({
     name: string().required(),
     password: string().required(),
-    confirm: string().oneOf([ref('password'), ], 'Passwords must match').required(),
+    confirm: string().oneOf([ref('password'), null], 'Passwords must match').required(),
   });
 
-  const onFieldChange = useCallback((event: { target: { name: any; value: any; }; }) => {
+  const onFieldChange = useCallback((event) => {
     setValues(
     {
       ...values,
@@ -32,7 +32,7 @@ export default function FormComponent() {
   }, [values]);
 
 
-  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+  const handleSubmit = async (event) => {
       event.preventDefault()
 
       const isFormValid = await formSchema.isValid(values, {
@@ -46,7 +46,7 @@ export default function FormComponent() {
         // If form is not valid, check which fields are incorrect:
         formSchema.validate(values, { abortEarly: false }).catch((err) => {
           // Collect all errors in { fieldName: boolean } format:
-          const errorsVAlidation = err.inner.reduce((acc: any, error: { path: any; }) => {
+          const errorsVAlidation = err.inner.reduce((acc, error) => {
             return {
               ...acc,
               [error.path]: true,
