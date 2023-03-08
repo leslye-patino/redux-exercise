@@ -6,7 +6,7 @@ export default function ComponentB() {
     const state = useContext(StateContext)
     const dispatch = useContext(DispatchContext)
     const handleOnChangeEvent = (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         dispatch({
             type: 'CHANGE_NAME',

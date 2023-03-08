@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react'
-import ComponentB from './ComponentB'
 import reducer from '../reducer'
 import { StateContext, DispatchContext, initialState } from '../constants'
 import { useReadPath } from '../hooks/useReadPath'
+import { FormComponent } from './FormComponent'
 import './styles.css'
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
             <DispatchContext.Provider value={dispatch}>
                 <div className="App">
                     <h1>useReducer and useContext Demo</h1>
-                    <ComponentB />
+                    <FormComponent />
                 </div>
             </DispatchContext.Provider>
         </StateContext.Provider>

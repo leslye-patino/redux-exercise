@@ -7,7 +7,19 @@
  * instead return a new state obj with updated values.
  */
 
-export default function reducer(state, action) {
+import { StateContextType } from './types/context'
+
+interface ActionInterface {
+    type: string
+    payload: {
+        name: string
+    }
+}
+
+export default function reducer(
+    state: StateContextType,
+    action: ActionInterface,
+) {
     const { type, payload } = action
     switch (type) {
         case 'CHANGE_NAME': {
