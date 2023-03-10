@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import ComponentC from './ComponentC'
 import { StateContext, DispatchContext } from '../constants'
+import { ComponentC } from './ComponentC'
 
-export default function ComponentB() {
+export const ComponentB = () => {
     const state = useContext(StateContext)
     const dispatch = useContext(DispatchContext)
     const handleOnChangeEvent = (

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { StateContext, DispatchContext } from '../constants'
-
-export default function ComponentC() {
+export const ComponentC = () => {
     const state = useContext(StateContext)
     const dispatch = useContext(DispatchContext)
     const handleReset = () => {
