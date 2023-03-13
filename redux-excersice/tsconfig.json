@@ -1,6 +1,11 @@
 {
     "compilerOptions": {
         "target": "es5",
+        "baseUrl": "./",
+        "paths": {
+            "src/*": ["src/*"],
+            "tests/*": ["__tests__/*"]
+        },
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
@@ -14,7 +19,8 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react"
+        "jsx": "react-jsx" // previously was "react"
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": ["node_modules"]
 }
